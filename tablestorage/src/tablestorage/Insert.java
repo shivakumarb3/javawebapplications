@@ -13,7 +13,7 @@ public class Insert {
 	{
 	    // Retrieve storage account from connection-string.
 		
-	String 	storageConnectionString="DefaultEndpointsProtocol=https;AccountName=flames;AccountKey=nQQTjOpIqL6LyU4pOTNW0+3iClwjHj7oUKCgNoeiLYXIQMMRB2Bs7cReNIqfq+6GX53zifFtXV1t+Wsvq1FOhA==;EndpointSuffix=core.windows.net;TableEndpoint=https://flames.table.core.windows.net/Myflame/";
+	String 	storageConnectionString="";
 	    CloudStorageAccount storageAccount =
 	        CloudStorageAccount.parse(storageConnectionString);
 

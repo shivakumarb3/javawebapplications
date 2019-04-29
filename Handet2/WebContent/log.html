@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<body>
+<script type = "text/javascript">
+         
+            // Form validation code will come here
+           
+   
+      // Form validation code will come here.
+      function validate() {
+      
+         var emailID = document.f1.uname.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos < 1 || ( dotpos - atpos < 2 )) {
+            alert("Please enter correct email ID")
+            //document.myForm.EMail.focus() ;
+            return false;
+         }
+         if(document.f1.pswd.value.length<8){
+        	 alert("password must be greater than 8")
+        	 return false;
+         }
+        
+         
+         
+         
+         return( true );
+      }
+   </script>
+
+</head>
+<body>
+
+         
+         
+         
+     
+<form action="login.jsp" name =f1 onsubmit = "return(validate());" method=post>
+<input type="text" name ="uname"  placeholder="username"><br>
+<input type="password" name="pswd" placeholder="password"><br>
+<input type=submit value="login">
+</form>
+
+</body>
+</html>

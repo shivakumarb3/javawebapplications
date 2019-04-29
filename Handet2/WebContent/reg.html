@@ -1,0 +1,104 @@
+<html>   
+   <head>
+      <title>Registration</title>      
+      <script type = "text/javascript">
+         
+            // Form validation code will come here
+           
+   
+      // Form validation code will come here.
+      function validate() {
+      
+         if( document.myForm.Name.value == "" ) {
+            alert( "Please provide your name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+         var emailID = document.myForm.email.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos < 1 || ( dotpos - atpos < 2 )) {
+            alert("Please enter correct email ID")
+            //document.myForm.EMail.focus() ;
+            return false;
+         }
+         if(document.myForm.pwd.value.length<8){
+        	 alert("password must be greater than 8")
+        	 return false;
+         }
+         if(document.myForm.cpwd.value!=document.myForm.pwd.value){
+        	 alert("password did not match")
+        	 return false;
+         }
+         //if(document.myForm.ph.value.length<10)
+         ph=Number(document.myForm.ph.value)
+         if (isNaN(ph)) {
+        	 alert("please enter correct phone number")
+        	 return false;
+        	}
+         if(document.myForm.ph.value.length<10)
+        	 {
+        	 alert("inocrrect phone number, less than 10 numbers")
+        	 return false;
+        	 }
+         
+         
+         return( true );
+      }
+   
+</script>
+        
+          
+   </head>
+   
+   <body>
+      <form action = "register.jsp" name = "myForm" onsubmit = "return(validate());" method="post">
+         <table cellspacing = "2" cellpadding = "2" border = "1">
+           
+            <tr>
+               <td align = "right">Name</td>
+               <td><input type = "text" name = "Name" /></td><br>
+               </tr>
+               <tr>
+                <td align = "right">Email</td>
+               <td><input type = "text" name = "email" /></td>
+               </tr>
+               <tr>
+                <td align = "right">password</td>
+               <td><input type = "password" name = "pwd" /></td>
+               </tr>
+               <br>
+               <tr>
+                <td align = "right">confirmpassowrd</td>
+               <td><input type = "password" name = "cpwd" /></td><br>
+               </tr>
+               <tr>
+                <td align = "right">phone</td>
+               <td><input type = "text" name = "ph" /></td>
+               </tr>
+               <br>
+               
+            <tr>
+          <td>  <input type="checkbox" name="work1" value="Tutor"> Tutor</td>
+       <td> <input type="checkbox" name="work2" value="Mentor"> Mentor </td>
+       </tr>
+     <tr>
+     <td> <input type="checkbox" name="work3" value="cardriver"> Car Driver </td>
+     <td> <input type="checkbox" name="work4" value="bikedriver"> Bike Driver </td>
+     </tr>
+     <tr>
+    <td> <input type="checkbox" name="work5" value="delivery"> Delievery </td>
+    <td> <input type="checkbox" name="work6" value="catering"> Catering </td>
+    <td> <input type="checkbox" name="work7" value="cheff"> Cheff </td>
+      </tr>
+        <tr>
+               <td><input type = "submit" value = "Submit" /></td>
+            </tr>
+            </table>
+           
+            
+            
+      </form>      
+   </body>
+</html>

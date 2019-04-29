@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>This predicts the highest normalisation of a relation</h1>
+<br>
+<p> We assume every relation is in 1st normal form by default. The realtion to be in the first normal form, ther should not be any multivalued attribute in a relationship<br>
+ eg: phone number of a person, addresses of a person etc. So make sure your relation does not have multivalued attributes
+ </p>
+ <button onclick="myFunction()">Click me</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+	var t=""
+	var p=""
+  document.getElementById("demo").innerHTML = document.getElementsByName("n")[0].value;
+  var x=document.getElementsByName("n")[0].value;
+  if(isNaN(x) )
+	  alert("please enter valid number");
+  else
+	  {
+	   for(i=0;i<Number(x);i++){
+		var l= prompt("enter left hand side attributes space by space ");
+		t=t+"."+l
+		var r=prompt("enter left hand side attributes space by space ");
+		p=p+"."+r
+		
+	  }
+	  }
+  document.getElementById("f1").value=t;
+  document.getElementById("f2").value=p;
+  alert(p)
+  alert(t)  
+}
+</script>
+
+<form action="nf.jsp" method =post>
+ <input type =text id="f1" name ="t" value="" size=50>
+ <input type =text id="f2"  name ="p" value ="" size=50>
+ <br> <br>
+ 
+Enter Relation attributes: <input type="text" name="att" placeholder="eg a b c d "><br>
+Enter Number of relations:<input type =text name="n" >
+<button onclick="myFunction()">Click me</button>
+<br>
+<input type="submit" value="check">
+</form>
+
+
+
+
+
+
+
+</body>
+</html>
